@@ -15,6 +15,11 @@ app.use(express.json());
 // API routes
 app.use("/jobs", jobsRouter);
 
+// Root route
+app.get("/", (req, res) => {
+  res.send("🚀 Backend är igång på Railway på port " + PORT);
+});
+
 app.listen(PORT, () => {
   console.log(`✅ Servern kör på port ${PORT}`);
 });
